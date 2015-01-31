@@ -1,7 +1,14 @@
 {% block content %}
 {% raw %}
 <div ng-controller="ViewJob">
-  <p>{{ text }}</p>
+    <div ng-repeat="key in text">
+    <h1>
+        {{ key.title }}
+    </h1>
+    <p>
+      {{ key.location }}
+    </p>
+  </div>
 </div>
 
 {% endraw %}

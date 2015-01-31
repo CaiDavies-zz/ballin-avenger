@@ -1,20 +1,18 @@
 // Firebase connection
+// var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/');
 $(document).ready(function(){
-  $('#addJobBtn').click(function(){
-    var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/jobs');
-    var title = $('#title').val();
-    var location = $('#location').val();
-    myDataRef.push({title: title, location: location});
-  });
+//   jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
+//     console.log(json);
+//   });
 
-  $('.login').click(function(){
-    twitterAuthentication();
-  });
+//   $('.login').click(function(){
+//     twitterAuthentication();
+//   });
 
 });
 
 function twitterAuthentication() {
-  ref.authWithOAuthPopup("twitter", function(error, authData) {
+  myDataRef.authWithOAuthPopup("twitter", function(error, authData) {
     if (error) {
       console.log("Login Failed!", error);
     } else {
@@ -44,10 +42,17 @@ myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $
     method: 'GET',
     url: 'https://glaring-torch-5894.firebaseio.com/jobs.json'
   })
-  .success(function (data, status, headers, config) {
-    $scope.text = angular.fromJson(data);
-    console.log(data);
-  })
+
+  .success(function (data, status) {
+
+    // var jobsArray = [];
+
+    // for (var key in data) {
+    //   jobsArray.push({title: data[key].title, location: data[key].location});
+    // }
+
+    $scope.text = data;
+  });
 
 }]);
 
