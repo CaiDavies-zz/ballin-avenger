@@ -5,6 +5,7 @@
 		<p><a class="btn btn-primary btn-large" href="http://twitter.github.com/bootstrap/">Read the Bootstrap documentation &raquo;</a></p>
 		<p><a class="btn btn-primary btn-large" href="http://docs.mixture.io">Read the Mixture documentation &raquo;</a></p>
 	</div>
+  {% raw %}
   <script type="text/x-handlebars" id="index">
     <ul>
     {{#each item in model}}
@@ -12,4 +13,5 @@
     {{/each}}
     </ul>
   </script>
+  {% endraw %}
 {% endblock %}
