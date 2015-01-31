@@ -36,13 +36,17 @@ myApp.controller("SampleCtrl", function($scope, $firebase) {
   syncObject.$bindTo($scope, "data");
 });
 
-myApp.controller("ViewJob", function($scope, $firebase){  
-  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/"); 
-  jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
-      $scope.postData = json
-      console.log(json);
-  });
-})
+myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
+
+  $http({
+    method: 'GET',
+    url: 'https://glaring-torch-5894.firebaseio.com/.json'
+  })
+  .success(function (data, status, headers, config) {
+    $scope.text = angular.fromJson(data);
+  })
+
+}]);
 
 myApp.controller("AddJob", function($scope, $firebase) {
   var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
