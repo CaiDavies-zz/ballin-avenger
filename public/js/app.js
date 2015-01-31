@@ -6,7 +6,22 @@ $(document).ready(function(){
     console.log(json);
   });
 
+  $('.login').click(function(){
+    twitterAuthentication();
+  });
+
+
 });
+
+function twitterAuthentication() {
+  myDataRef.authWithOAuthPopup("twitter", function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });
+}
 
     
 
