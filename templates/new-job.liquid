@@ -1,10 +1,19 @@
 {% block content %}
-  <div ng-controller="AddJob">
-    <input id="title" placeholder="title" type="text" ng-model="job.title"><br>
+{% raw %}
+  <div ng-controller="AddJob" class="container">
+    <label>Job Title</label>
+    <input id="title" placeholder="Job Title" type="text" ng-model="job.title"><br>
+    <label>Location</label>
     <input id="location" placeholder="location" type="text" ng-model="job.location"><br>
+    <label>Job Description</label>
     <textarea name="" placeholder="description" id="description" cols="30" rows="10" ng-model="job.description"></textarea>
-    <input id="job_type" placeholder="job type" type="text" ng-model="job.job_type"><br>
+    <label>Job Type</label>
     <button id="addJobBtn">Submit</button>
-
   </div>	
+      <div ng-controller="JobRoles">
+      <select id="job_type" ng-model="selectedItem">
+        <option ng-repeat="item in items" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+{% endraw %}
 {% endblock %}

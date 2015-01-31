@@ -44,17 +44,14 @@ myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $
   })
 
   .success(function (data, status) {
-
-    // var jobsArray = [];
-
-    // for (var key in data) {
-    //   jobsArray.push({title: data[key].title, location: data[key].location});
-    // }
-
     $scope.text = data;
   });
 
 }]);
+
+myApp.controller('JobRoles',function($scope){
+   $scope.items = ['Design','Development','Marketing','Customer Service']
+});
 
 myApp.controller("AddJob", function($scope, $firebase) {
   var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/jobs");
