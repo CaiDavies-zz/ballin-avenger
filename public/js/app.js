@@ -2,10 +2,6 @@
 // var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/');
 $(document).ready(function(){
 
-var jobTitle = $('#title');
-var jobLocation = $('#location');
-var jobDescription = $('#description');
-
 //   jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
 //     console.log(json);
 //   });
@@ -45,7 +41,9 @@ myApp.controller("AddJob", function($scope, $firebase) {
 
   var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
 
-
+  var jobTitle = $('#title');
+  var jobLocation = $('#location');
+  var jobDescription = $('#description');
 
   $('#addJobBtn').click(function() {
     ref.push({title: jobTitle.val(), location: jobLocation.val(), description: jobDescription.val()});
