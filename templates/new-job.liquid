@@ -1,17 +1,10 @@
 {% block content %}
-	<div class="starter-template">
-		<h1>Hello, world!</h1>
-		<p>You are using the Mixture + Bootstrap (v3.1.0) boilerplate.</p>
-		<p><a class="btn btn-primary btn-large" href="http://twitter.github.com/bootstrap/">Read the Bootstrap documentation &raquo;</a></p>
-		<p><a class="btn btn-primary btn-large" href="http://docs.mixture.io">Read the Mixture documentation &raquo;</a></p>
-	</div>
-  {% raw %}
-  <script type="text/x-handlebars" id="index">
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
-  </script>
-  {% endraw %}
+  <div ng-controller="AddJob">
+    <input id="title" placeholder="title" type="text" ng-model="job.title"><br>
+    <input id="location" placeholder="location" type="text" ng-model="job.location"><br>
+    <textarea name="" placeholder="description" id="description" cols="30" rows="10" ng-model="job.description"></textarea>
+    <input id="job_type" placeholder="job type" type="text" ng-model="job.job_type"><br>
+    <button id="addJobBtn">Submit</button>
+
+  </div>	
 {% endblock %}

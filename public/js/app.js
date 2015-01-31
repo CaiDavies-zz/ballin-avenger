@@ -1,7 +1,6 @@
 // Firebase connection
 // var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/');
 $(document).ready(function(){
-
 //   jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
 //     console.log(json);
 //   });
@@ -37,16 +36,33 @@ myApp.controller("SampleCtrl", function($scope, $firebase) {
   syncObject.$bindTo($scope, "data");
 });
 
+myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
+
+  $http({
+    method: 'GET',
+    url: 'https://glaring-torch-5894.firebaseio.com/jobs.json'
+  })
+
+  .success(function (data, status) {
+
+    // var jobsArray = [];
+
+    // for (var key in data) {
+    //   jobsArray.push({title: data[key].title, location: data[key].location});
+    // }
+
+    $scope.text = data;
+  });
+
+}]);
+
 myApp.controller("AddJob", function($scope, $firebase) {
-
-  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
-
+  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/jobs");
   var jobTitle = $('#title');
   var jobLocation = $('#location');
   var jobDescription = $('#description');
-
+  var job_type = $('#job_type');
   $('#addJobBtn').click(function() {
-    ref.push({title: jobTitle.val(), location: jobLocation.val(), description: jobDescription.val()});
+    ref.push({job_role: jobTitle.val(), description: jobDescription.val(), location: jobLocation.val(), job_type: job_type.val() });
   })
-
 })
