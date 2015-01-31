@@ -44,13 +44,6 @@ myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $
   })
 
   .success(function (data, status) {
-
-    // var jobsArray = [];
-
-    // for (var key in data) {
-    //   jobsArray.push({title: data[key].title, location: data[key].location});
-    // }
-
     $scope.text = data;
   });
 
@@ -62,7 +55,10 @@ myApp.controller("AddJob", function($scope, $firebase) {
   var jobLocation = $('#location');
   var jobDescription = $('#description');
   var job_type = $('#job_type');
+
   $('#addJobBtn').click(function() {
-    ref.push({job_role: jobTitle.val(), description: jobDescription.val(), location: jobLocation.val(), job_type: job_type.val() });
+    var newJob = ref.push({job_role: jobTitle.val(), description: jobDescription.val(), location: jobLocation.val(), job_type: job_type.val() });
+    console.log(newJob.key());
   })
+
 })
