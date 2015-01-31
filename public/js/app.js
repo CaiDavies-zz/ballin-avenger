@@ -57,11 +57,12 @@ myApp.controller('ViewJob', ['$scope', '$http', '$firebase', function ($scope, $
 }]);
 
 myApp.controller("AddJob", function($scope, $firebase) {
-  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
+  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/jobs");
   var jobTitle = $('#title');
   var jobLocation = $('#location');
   var jobDescription = $('#description');
+  var job_type = $('#job_type');
   $('#addJobBtn').click(function() {
-    ref.push({title: jobTitle.val(), location: jobLocation.val(), description: jobDescription.val()});
+    ref.push({job_role: jobTitle.val(), description: jobDescription.val(), location: jobLocation.val(), job_type: job_type.val() });
   })
 })

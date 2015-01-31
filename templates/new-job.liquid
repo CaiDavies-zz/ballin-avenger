@@ -1,8 +1,10 @@
 {% block content %}
-  <!-- <div ng-controller="AddJob"> -->
+  <div ng-controller="AddJob">
     <input id="title" placeholder="title" type="text" ng-model="job.title"><br>
     <input id="location" placeholder="location" type="text" ng-model="job.location"><br>
-    <textarea name="" id="description" cols="30" rows="10" ng-model="job.description"></textarea>
+    <textarea name="" placeholder="description" id="description" cols="30" rows="10" ng-model="job.description"></textarea>
+    <input id="job_type" placeholder="job type" type="text" ng-model="job.job_type"><br>
     <button id="addJobBtn">Submit</button>
-  <!-- </div>	 -->
+
+  </div>	
 {% endblock %}
