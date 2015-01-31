@@ -1,15 +1,18 @@
 // Firebase connection
-var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/');
-$(document).ready(function(){  
+// var myDataRef = new Firebase('https://glaring-torch-5894.firebaseio.com/');
+$(document).ready(function(){
 
-  jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
-    console.log(json);
-  });
+var jobTitle = $('#title');
+var jobLocation = $('#location');
+var jobDescription = $('#description');
 
-  $('.login').click(function(){
-    twitterAuthentication();
-  });
+//   jQuery.getJSON("https://glaring-torch-5894.firebaseio.com/.json", function(json){
+//     console.log(json);
+//   });
 
+//   $('.login').click(function(){
+//     twitterAuthentication();
+//   });
 
 });
 
@@ -23,16 +26,29 @@ function twitterAuthentication() {
   });
 }
 
-    
+var myApp = angular.module("myApp", ["firebase"]);
 
-App = Ember.Application.create();
+myApp.controller("SampleCtrl", function($scope, $firebase) {
 
-App.Router.map(function() {
-  // put your routes here
+  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
+  var sync = $firebase(ref);
+
+  // download the data into a local object
+  var syncObject = sync.$asObject();
+
+  // synchronize the object with a three-way data binding
+  // click on `index.html` above to see it used in the DOM!
+  syncObject.$bindTo($scope, "data");
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
-});
+myApp.controller("AddJob", function($scope, $firebase) {
+
+  var ref = new Firebase("https://glaring-torch-5894.firebaseio.com/");
+
+
+
+  $('#addJobBtn').click(function() {
+    ref.push({title: jobTitle.val(), location: jobLocation.val(), description: jobDescription.val()});
+  })
+
+})
