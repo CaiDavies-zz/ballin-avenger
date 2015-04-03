@@ -1,17 +1,13 @@
-<div class="navbar-header navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Project name</a>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li {% if mixture.url == "index" %}class="active"{% endif %}><a href="/">Home</a></li>
-                <li {% if mixture.url == "new-job" %}class="active"{% endif %}><a href="/new-job">Post a job</a></li>
-                <li> <a href="" class="login">Login</a></li>
-            </ul>
-        </div>
+<div class="container">
+  <div class="grid">
+    <div class="grid__col grid__col--8-of-12 grid__col--centered">
+      <nav class="main-nav">
+        <a class="main-nav__logo" href="#">wemake</a>
+        <ul class="main-nav-anchors">
+          <li {% if mixture.url == "index" %}class="active main-nav-anchors__item" {% else %}class="main-nav-anchors__item"{% endif %}><a href="/">Home</a></li>
+          <li {% if mixture.url == "submit" %}class="active main-nav-anchors__item" {% else %}class="main-nav-anchors__item"{% endif %}><a href="mailto:cai@hassle.com">Submit a job</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
 </div>
