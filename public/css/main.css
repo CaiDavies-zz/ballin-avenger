@@ -457,7 +457,7 @@ body {
   text-align: center;
 }
 .main-nav {
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
   zoom: 1;
 }
 .main-nav:before,
@@ -469,7 +469,7 @@ body {
   clear: both;
 }
 .main-nav__logo {
-  color: #000;
+  color: #072529;
   text-decoration: none;
   font-size: 28px;
   font-weight: 700;
@@ -498,6 +498,9 @@ body {
 }
 .hero__heading {
   text-align: center;
+}
+.hero__subheading {
+  color: #555;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**

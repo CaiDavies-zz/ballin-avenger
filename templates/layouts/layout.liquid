@@ -15,9 +15,11 @@
         <script src="public/js/app.js"></script>
     </head>
     <body>
-        {% include "navigation" %}
-        <div class="container">
-            {% block content %}{% endblock %}
+        <div class="main-container">
+            {% include "navigation" %}
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
         </div>
         {{ "bootstrap.js" | asset_url | script_tag }}
     </body>
