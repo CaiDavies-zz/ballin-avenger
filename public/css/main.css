@@ -391,13 +391,15 @@
   vertical-align: middle;
 }
 h1 {
-  font-size: 200%;
+  font-size: 40px;
+  line-height: 1;
 }
 h2 {
-  font-size: 160%;
+  font-size: 32px;
+  line-height: 1;
 }
 h3 {
-  font-size: 120%;
+  font-size: 24px;
 }
 h4 {
   font-size: 100%;
@@ -409,14 +411,62 @@ h6 {
   font-size: 80%;
   font-weight: normal;
 }
+.heading--a {
+  font-size: 40px;
+}
+.heading--b {
+  font-size: 32px;
+}
+.heading--c {
+  font-size: 24px;
+}
+.heading--d {
+  font-size: 20px;
+}
+.heading--e {
+  font-size: 18px;
+}
+.heading-f {
+  font-size: 16px;
+}
+.book {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.semibold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+.heavy {
+  font-weight: 900;
+}
+.italic {
+  font-style: italic;
+}
 body {
   font-family: "freight-sans-pro", sans-serif;
   font-style: normal;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }
+.center {
+  text-align: center;
+}
 .main-nav {
   padding: 20px 0;
+  zoom: 1;
+}
+.main-nav:before,
+.main-nav:after {
+  content: "";
+  display: table;
+}
+.main-nav:after {
+  clear: both;
 }
 .main-nav__logo {
   color: #000;
@@ -424,6 +474,7 @@ body {
   font-size: 28px;
   font-weight: 700;
   float: left;
+  letter-spacing: -1px;
 }
 .main-nav-anchors {
   float: right;
@@ -440,6 +491,13 @@ body {
   color: #000;
   text-decoration: none;
   font-size: 18px;
+}
+.hero__image {
+  margin: 0 auto;
+  display: block;
+}
+.hero__heading {
+  text-align: center;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -554,7 +612,6 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 /**
@@ -798,4 +855,16 @@ table {
 td,
 th {
   padding: 0;
+}
+/* Micro ClearFix Mixin */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }
