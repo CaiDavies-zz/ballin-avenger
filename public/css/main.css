@@ -447,6 +447,12 @@ h6 {
 .italic {
   font-style: italic;
 }
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
 body {
   font-family: "freight-sans-pro", sans-serif;
   font-style: normal;
@@ -501,6 +507,29 @@ body {
 }
 .hero__subheading {
   color: #555;
+}
+.jobs-list {
+  padding: 0;
+  width: 48.936170213%;
+  float: right;
+  margin: 120px auto;
+  box-sizing: border-box;
+}
+.jobs-list__item {
+  list-style: none;
+  padding: 0;
+  min-height: 120px;
+  zoom: 1;
+  padding: 20px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.jobs-list__item:before,
+.jobs-list__item:after {
+  content: "";
+  display: table;
+}
+.jobs-list__item:after {
+  clear: both;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**

@@ -9,20 +9,18 @@
     <h2 class="hero__subheading heading--c book center italic">
       Nulla nulla ante, varius vitae finibus scelerisque
     </h2>
-  <div class="grid">
-        <div ng-controller="ViewJob" class="grid__col--6-of-12">
-            <div ng-repeat="key in text">
-            <h1>
+        <ul ng-controller="ViewJob" class="jobs-list">
+            <li ng-repeat="key in text" class="jobs-list__item">
+            <h1 class="heading--e bold pull-left">
                 {{ key.job_role }}
             </h1>
-            <p>
+            <p class="pull-right">
               {{ key.location }}
             </p>
             <p>
               {{ key.job_type }}
             </p>
-          </div>
-        </div>
-      </div>
+          </li>
+      </ul>
 {% endraw %}
 {% endblock %}
