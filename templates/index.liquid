@@ -10,17 +10,19 @@
       Nulla nulla ante, varius vitae finibus scelerisque
     </h2>
         <ul ng-controller="ViewJob" class="jobs-list">
+          <a href="#">
             <li ng-repeat="key in text" class="jobs-list__item">
             <h1 class="heading--e bold pull-left">
                 {{ key.job_role }}
             </h1>
-            <p class="pull-right">
+            <p class="pull-right heading-e medium">
               {{ key.location }}
             </p>
-            <p>
+            <p class="job-list-job-type">
               {{ key.job_type }}
             </p>
-          </li>
+            </li>
+          </a>
       </ul>
 {% endraw %}
 {% endblock %}

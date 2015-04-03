@@ -531,6 +531,17 @@ body {
 .jobs-list__item:after {
   clear: both;
 }
+.job-list-job-type {
+  zoom: 1;
+}
+.job-list-job-type:before,
+.job-list-job-type:after {
+  content: "";
+  display: table;
+}
+.job-list-job-type:after {
+  clear: both;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
