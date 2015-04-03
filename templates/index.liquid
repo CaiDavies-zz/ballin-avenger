@@ -10,21 +10,19 @@
       Nulla nulla ante, varius vitae finibus scelerisque
     </h2>
   <div class="grid">
-    <div class="grid__col grid__col--8-of-12 grid__col--centered">
-      <div ng-controller="ViewJob">
-          <div ng-repeat="key in text">
-          <h1>
-              {{ key.job_role }}
-          </h1>
-          <p>
-            {{ key.location }}
-          </p>
-          <p>
-            {{ key.job_type }}
-          </p>
+        <div ng-controller="ViewJob" class="grid__col--6-of-12">
+            <div ng-repeat="key in text">
+            <h1>
+                {{ key.job_role }}
+            </h1>
+            <p>
+              {{ key.location }}
+            </p>
+            <p>
+              {{ key.job_type }}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 {% endraw %}
 {% endblock %}
